@@ -1,0 +1,10 @@
+docker run -d --name speech -p 5666:5432 \
+        -v $HOME/postgresql/speech_db:/var/lib/postgresql/speech_db \
+        -e POSTGRES_PASSWORD=12345678 \
+        -e POSTGRES_USER=speech_user \
+        -e POSTGRES_DB=speech_db \
+        postgres
+
+psql -p 5666 -h 127.0.0.1 -U speech_user speech_db
+
+psql -p 5666 -h 127.0.0.1 -U speech_user speech_db -f init_db.ddl
