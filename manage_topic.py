@@ -11,7 +11,7 @@ def read_csv() -> list:
     Returns:
         csv_topics (list): list of topics from csv file.
     """
-    if not os.path.isfile(CSV_FILE):
+    if not os.path.exists(CSV_FILE):
         return None
     csv_topics = []
     with open(CSV_FILE, 'r') as csv_file:

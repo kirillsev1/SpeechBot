@@ -15,6 +15,8 @@ INSERT_TOPIC = "insert into topic(name) values (%s)"
 FORMAT = '%(asctime)s - %(name)s:%(lineno)s - %(levelname)s - %(message)s'
 
 TEMP_PATH = "temp/"
+LOG_PATH = "logs/"
+TEMP_AUDIO = "temp/"
 CSV_FILE = "test.csv"
 
 SIMPLE_TOPICS = [
