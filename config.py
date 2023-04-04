@@ -16,7 +16,6 @@ FORMAT = '%(asctime)s - %(name)s:%(lineno)s - %(levelname)s - %(message)s'
 
 TEMP_PATH = "temp/"
 LOG_PATH = "logs/"
-TEMP_AUDIO = "temp/"
 CSV_FILE = "test.csv"
 
 SIMPLE_TOPICS = [

@@ -1,7 +1,7 @@
 """File with telebot methods."""
 from telebot.types import Message
 from telebot.async_telebot import AsyncTeleBot
-from config import TEMP_PATH, NO_DATA, SEARCH_MSG, HELLOW_MSG, TEMP_AUDIO
+from config import TEMP_PATH, NO_DATA, SEARCH_MSG, HELLOW_MSG
 from audio_works import run_ffmpeg, choose_topic, recognise
 from logger import init_logger
 import logging
@@ -29,8 +29,8 @@ async def save_files(message: Message) -> tuple:
     side_file = f"{TEMP_PATH}{file_id}.ogg"
     audio_file = f"{TEMP_PATH}{file_id}.wav"
     file_info = await bot.get_file(message.voice.file_id)
-    if not os.path.exists(TEMP_AUDIO):
-        os.mkdir(TEMP_AUDIO)
+    if not os.path.exists(TEMP_PATH):
+        os.mkdir(TEMP_PATH)
     with open(side_file, "wb") as new_file:
         new_file.write(await bot.download_file(file_info.file_path))
 
